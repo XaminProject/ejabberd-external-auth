@@ -10,7 +10,7 @@
     "require": {
 
     },
-    "suggest": {
-        "monolog/monolog": "Enable logging"
-    }
+    "autoload": {
+        "psr-0": {"Ejabberd": "Ejabberd/"}
+    }    
 }
