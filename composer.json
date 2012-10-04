@@ -1,0 +1,16 @@
+{
+    "name": "xamin/ejabberd-external-auth",
+    "description": "ejabberd externall authentication library",
+    "authors": [
+        {
+            "name": "Fzerorubigd",
+            "email": "fzerorubigd@gmail.com"
+        }
+    ],
+    "require": {
+
+    },
+    "suggest": {
+        "monolog/monolog": "Enable logging"
+    }
+}
