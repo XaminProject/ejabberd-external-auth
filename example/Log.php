@@ -42,6 +42,9 @@ class MyLog implements Ejabberd_Auth_LogInterface
      */
     public function __construct($address) 
     {
+		if (!file_exists($address)) {
+			touch($address);
+		}
         if (!is_writable($address)) {
             throw new RuntimeException($address . ' is not writable');
         }

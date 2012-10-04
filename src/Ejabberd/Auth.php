@@ -142,10 +142,11 @@ class Ejabberd_Auth
             throw new RuntimeException('Pipe broken');
         }
 
-        $length = current(unpack('n', $length));
-        if (!$length) {
+        $length = unpack('n', $length);
+        if (!is_array($length)) {
             throw new UnexpectedValueException("Invalid length value, won't continue reading");
         }
+        $length = current($length);
 
         $message = fgets($this->_stdin, $length + 1);
         //TODO : {fzerorubigd} throw exception on invalid size?

@@ -1,3 +1,4 @@
+#!/usr/bin/php
 <?php
 
 /**
@@ -14,12 +15,12 @@
  * @link      http://xamin.ir
  */
 
-require_once "vendor/autoload.php";
-require_once "Auth.php";
-require_once "Log.php";
+require_once __DIR__ . "/vendor/autoload.php";
+require_once __DIR__ . "/Auth.php";
+require_once __DIR__ . "/Log.php";
 
 $users = array (
-    'testserver' => array (
+    'localhost' => array (
         'fzerorubigd' => '123456',  //User name is pretty harder than password :D
         'test'       => 'dude'
         )
@@ -28,7 +29,7 @@ $users = array (
 
 $authz = new MyAuth($users);
 $log = new MyLog(__DIR__ . '/test.log');
-
+$log->debug("Who?");
 $authenticator = new Ejabberd_Auth($authz, $log);
 
 $authenticator->serve();
