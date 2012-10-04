@@ -164,7 +164,7 @@ class Ejabberd_Auth
     final private function _doParse($message)
     {
         $messageArray = explode(':', $message, 4);
-        if (count($message) < 3) {
+        if (count($messageArray) < 3) {
             throw new UnexpectedValueException(sprintf('Message is too short: "%s"', $message));
         }
         
