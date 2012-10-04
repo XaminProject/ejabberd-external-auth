@@ -13,3 +13,22 @@
  * @version   GIT: $Id$
  * @link      http://xamin.ir
  */
+
+require_once "vendor/autoload.php";
+require_once "Auth.php";
+require_once "Log.php";
+
+$users = array (
+    'testserver' => array (
+        'fzerorubigd' => '123456',  //User name is pretty harder than password :D
+        'test'       => 'dude'
+        )
+    
+);
+
+$authz = new MyAuth($users);
+$log = new MyLog(__DIR__ . '/test.log');
+
+$authenticator = new Ejabberd_Auth($authz, $log);
+
+$authenticator->serve();

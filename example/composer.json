@@ -1,0 +1,13 @@
+{
+    "name": "fzerorubigd/example",
+    "description": "xamin/ejabberd-external-auth",
+    "require": {
+        "xamin/ejabberd-external-auth": "dev-master"
+    },
+    "authors": [
+        {
+            "name": "Fzerorubigd",
+            "email": "fzerorubigd@gmail.com"
+        }
+    ]
+}
